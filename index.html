@@ -10,6 +10,9 @@
     <meta name="description"
           content="Discover ALIYAR MANDI. Explore our restaurant and menu.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -46,18 +49,17 @@
     <div class="hero-content">
 
         <span class="hero-tag">
-            AUTHENTIC ARABIAN DINING
+            ALIYAR MANDI · WEBSITE PREVIEW
         </span>
 
         <h1>
-            The Art Of<br>
-            <span>Arabian</span> Flavours.
+            Meet<br>
+            <span>ALIYAR MANDI.</span>
         </h1>
 
         <p>
-            A celebration of rich flavours,
-            traditional inspiration and
-            memorable dining experiences.
+            Restaurant details, approved photography and the confirmed menu
+            will be added after the owner reviews this preview.
         </p>
 
         <div class="hero-buttons">
@@ -87,74 +89,29 @@
     <h2>Explore Our Menu</h2>
 
     <p class="section-description">
-        A selection of dishes to explore.
-        Final menu and prices will be confirmed
-        by ALIYAR MANDI.
+        This sample menu is for website preview only. Dish names, descriptions,
+        prices and images are awaiting restaurant approval.
     </p>
 
-    <!-- Category filters -->
-    <div class="menu-filters">
+    <label class="menu-search-label" for="menuSearch">Find a dish</label>
+    <input
+        type="search"
+        id="menuSearch"
+        class="menu-search"
+        placeholder="Search dishes..."
+        autocomplete="off"
+    >
+
+    <div class="menu-filters" id="menuFilters" aria-label="Filter menu by category">
         <button class="filter-btn active" data-category="all">
             All Items
         </button>
-
-        <button class="filter-btn" data-category="mandi">
-            Mandi
-        </button>
-
-        <button class="filter-btn" data-category="meals">
-            Meals
-        </button>
-
-        <button class="filter-btn" data-category="other">
-            Other
-        </button>
     </div>
 
-    <!-- Menu cards -->
-    <div class="menu-grid" id="menuGrid">
-
-        <article class="menu-card" data-category="mandi">
-            <div class="menu-image mandi-image"></div>
-            <div class="menu-info">
-                <span class="food-category">MANDI</span>
-                <h3>Chicken Mandi</h3>
-                <p>Sample menu item — description to be confirmed.</p>
-                <div class="menu-price">Price to be confirmed</div>
-            </div>
-        </article>
-
-        <article class="menu-card" data-category="mandi">
-            <div class="menu-image food-image"></div>
-            <div class="menu-info">
-                <span class="food-category">MANDI</span>
-                <h3>Special Mandi</h3>
-                <p>Sample menu item — description to be confirmed.</p>
-                <div class="menu-price">Price to be confirmed</div>
-            </div>
-        </article>
-
-        <article class="menu-card" data-category="meals">
-            <div class="menu-image meals-image"></div>
-            <div class="menu-info">
-                <span class="food-category">MEALS</span>
-                <h3>Kerala Meals</h3>
-                <p>Sample menu item — description to be confirmed.</p>
-                <div class="menu-price">Price to be confirmed</div>
-            </div>
-        </article>
-
-        <article class="menu-card" data-category="other">
-            <div class="menu-image food-image"></div>
-            <div class="menu-info">
-                <span class="food-category">OTHER</span>
-                <h3>Special Dish</h3>
-                <p>Sample menu item — description to be confirmed.</p>
-                <div class="menu-price">Price to be confirmed</div>
-            </div>
-        </article>
-
-    </div>
+    <p id="menuMessage" class="menu-status" role="status" aria-live="polite">
+        Loading live menu...
+    </p>
+    <div class="menu-grid" id="menuGrid"></div>
 
 </section>
 
@@ -169,10 +126,12 @@
 
         <div class="about-image">
             <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900"
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
                 alt="Restaurant interior - temporary demo photo"
+                loading="lazy"
+                decoding="async"
             >
-            <span class="image-caption">ALIYAR MANDI · RESTAURANT</span>
+                <span class="image-caption">TEMPORARY DEMO PHOTO</span>
         </div>
 
         <div class="about-content">
@@ -180,16 +139,14 @@
             <p class="eyebrow">OUR STORY</p>
 
             <h2>
-                More Than Food.<br>
-                <span>A Dining Experience.</span>
+                About<br>
+                <span>ALIYAR MANDI.</span>
             </h2>
 
             <p>
-                Welcome to ALIYAR MANDI.
-
-                Discover a restaurant experience inspired
-                by rich Arabian flavours and the joy of
-                sharing good food.
+                This website concept is being prepared for ALIYAR MANDI.
+                The restaurant's story and specialties will be added after
+                the owner confirms the details.
             </p>
 
             <p class="about-note">
@@ -226,25 +183,27 @@
         <div class="contact-card">
             <span class="contact-icon">⌖</span>
             <h3>Our Location</h3>
-            <p>Restaurant address to be confirmed.</p>
+            <p id="contactAddressFallback">Restaurant address to be confirmed.</p>
+            <a id="contactAddress" class="contact-link" target="_blank" rel="noopener" hidden></a>
         </div>
 
         <div class="contact-card">
             <span class="contact-icon">☎</span>
             <h3>Call Us</h3>
-            <p>Contact number to be confirmed.</p>
+            <p id="contactPhoneFallback">Contact number to be confirmed.</p>
+            <a id="contactPhone" class="contact-link" hidden></a>
         </div>
 
         <div class="contact-card">
             <span class="contact-icon">◷</span>
             <h3>Opening Hours</h3>
-            <p>Opening hours to be confirmed.</p>
+            <p id="contactHours">Opening hours to be confirmed.</p>
         </div>
 
     </div>
 
     <p class="contact-note">
-        Official contact and location details coming soon.
+        We look forward to hearing from you.
     </p>
 
 </section>
@@ -256,7 +215,7 @@
         ALIYAR <span>MANDI.</span>
     </a>
 
-    <p>Good Food. Great Moments.</p>
+    <p>Restaurant website preview.</p>
 
     <div class="footer-line"></div>
 
@@ -271,9 +230,11 @@
 
 
     <script src="script.js"></script>
+    <script type="module" src="menu.js"></script>
     
-    <a href="https://wa.me/910000000000" class="whatsapp-float" target="_blank" rel="noopener">
-        WhatsApp Us
+    <a id="whatsappButton" class="whatsapp-float" target="_blank" rel="noopener" hidden>
+        WhatsApp for Orders
     </a>
+    <script src="contact.js"></script>
 </body>
 </html>

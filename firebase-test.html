@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Connection Test</title>
+</head>
+<body>
+  <h1>ALIYAR MANDI</h1>
+  <p id="status">Connecting to Firebase...</p>
+
+  <script type="module">
+    import { app, auth, db } from "./firebase.js";
+
+    document.getElementById("status").textContent =
+      "Firebase connected successfully!";
+
+    console.log("Firebase app:", app);
+    console.log("Authentication:", auth);
+    console.log("Firestore:", db);
+  </script>
+</body>
+</html>

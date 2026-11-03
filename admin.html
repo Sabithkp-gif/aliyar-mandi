@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALIYAR MANDI | Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <main class="login-container" id="loginSection">
+        <h1>ALIYAR MANDI</h1>
+        <p>Restaurant Management</p>
+
+        <form id="loginForm">
+            <input
+                type="email"
+                id="email"
+                placeholder="Email address"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit">Login</button>
+            <p id="loginMessage"></p>
+        </form>
+    </main>
+
+    <main class="dashboard" id="dashboardSection" hidden>
+        <header>
+            <h1>ALIYAR MANDI</h1>
+            <a class="customer-site-link" href="index.html" target="_blank" rel="noopener">
+                View customer site
+            </a>
+            <button id="logoutButton">Logout</button>
+        </header>
+
+        <h2>Menu Management</h2>
+        <p>Manage your restaurant menu here.</p>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3 id="totalItems">0</h3>
+                <p>Total Items</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="availableItems">0</h3>
+                <p>Available Items</p>
+            </div>
+        </section>
+
+<section class="menu-section category-section">
+    <h2>Category Management</h2>
+    <p>Add and organize the categories used by menu items.</p>
+
+    <form id="categoryForm" class="menu-form">
+        <label for="categoryName">New category name</label>
+        <input type="text" id="categoryName" maxlength="40" required>
+        <button type="submit" id="addCategoryButton">Add Category</button>
+        <p id="categoryMessage" role="status" aria-live="polite"></p>
+    </form>
+    <div id="categoryList" aria-live="polite"></div>
+</section>
+
+<section class="menu-section">
+    <h2>Menu Items</h2>
+    <p>Live menu data from Firestore</p>
+
+
+<h3 class="form-heading">Add New Food Item</h3>
+
+<form id="addMenuForm" class="menu-form">
+
+    <label for="foodName">Food Name</label>
+    <input
+        type="text"
+        id="foodName"
+        placeholder="Example: Chicken Mandi"
+        required
+    >
+
+    <label for="foodDescription">Description</label>
+    <textarea
+        id="foodDescription"
+        placeholder="Describe the food..."
+        required
+    ></textarea>
+
+    <label for="foodPrice">Price (₹)</label>
+    <input
+        type="number"
+        id="foodPrice"
+        placeholder="250"
+        min="0"
+        step="0.01"
+        required
+    >
+
+    <label for="foodCategory">Category</label>
+    <select id="foodCategory" required>
+        <option value="">Loading categories...</option>
+    </select>
+
+    <label for="foodImage">Image URL or website path</label>
+    <input
+        type="text"
+        id="foodImage"
+        placeholder="assets/images/chicken-mandi.jpg"
+        autocomplete="off"
+    >
+    <p class="image-help">Use a secure https:// image link or add an image under assets/images/ and enter its path. Image uploads are not enabled.</p>
+    <div class="image-preview-wrap" id="imagePreviewWrap" hidden>
+        <img id="foodImagePreview" alt="Preview of the selected menu image">
+        <span>Image preview</span>
+    </div>
+
+    <label class="availability-label">
+        <input type="checkbox" id="foodAvailable" checked>
+        Available for customers
+    </label>
+
+    <button type="submit" id="addFoodButton">
+        Add Food Item
+    </button>
+
+    <p id="formMessage" role="status"></p>
+
+</form>
+
+
+    <div id="menuMessage">Loading menu...</div>
+    <div id="menuList"></div>
+</section>
+    </main>
+
+    <script type="module" src="admin.js"></script>
+
+</body>
+</html>
